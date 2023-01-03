@@ -61,29 +61,26 @@ public class RottenPotato {
 
     public int worstMovie2022(int[][] ratings) {
         int count = 0;
-        int maxCount = 0;
+        int minCount = Integer.MAX_VALUE;
 
         int outcome = 0;
         for (int i = 0; i <ratings[0].length; i ++) {
             for (int k[]: ratings) {
                 count += k[i];
             }
-            if (count >= maxCount) {
-                maxCount = count;
+            if (count <= minCount) {
+                minCount = count;
                 outcome = i;
             }
+            count = 0;
         }
         return outcome;
 
     }
 
     public boolean isFresh(int[][] ratings, int movie) {
-        int count = 0;
 
-            for (int k: ratings[movie]) {
-                count += k;
-            }
-        if (count > avgRating2022(ratings)) return true;
+        if (movieAvgRating(ratings, movie) > avgRating2022(ratings)) return true;
         return false;
     }
 

@@ -11,7 +11,11 @@ public class main {
 
     public static void main(String[] args) {
         RottenPotato potato = new RottenPotato();
-        System.out.println(potato.avgRating2022(potato.getRatings()));
-        System.out.println(potato.movieAvgRating(potato.getRatings(), MORBIUS));
+        System.out.println("The average rating of all the movies is: " + potato.avgRating2022(potato.getRatings()));
+        System.out.println("The average rating of Morbius is: " + potato.movieAvgRating(potato.getRatings(), 0));
+        System.out.println("The worst movie of 2022 is: " + potato.worstMovie2022(potato.getRatings()));
+        System.out.println("The average rating of Dwight is: " + potato.reviewerAvgRating(potato.getRatings(), 0));
+        System.out.println("The hardest rater of all is rater #" + potato.hardestRater2022(potato.getRatings()));
+        System.out.println("Morbius is fresh? " + potato.isFresh(potato.getRatings(), 0));
     }
 }
